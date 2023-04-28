@@ -1,22 +1,23 @@
 :root{
   --color1: black;
-  --color2: #232933;
-  --color3: #2E3744;
-  --color4: white;
-  --color5: gray;
-  --color6: rgb(23, 108, 245);
+  --color2: #2E3744;
+  --color3: gray;
+  --color4: lightgray;
+  --color5: white;
+  --color6: lightblue;
+  --color7: blue;
 }
 *{
   margin: 0;
   padding: 0;
   border: 0;
-  background-color: lightgray;
-  border: 1 px solide black;
 }
 header {
   position: fixed;
   height: 25%;
   width: 100%;
+  background-color: var(--color3);
+  border-color: 10px solid var(--color7);
 }
 nav {
   position: fixed;
@@ -25,10 +26,15 @@ nav {
   width: 30%;
 }
 main {
-
+  position: fixed;
+  top: 25%;
+  height: 65%;
+  width: 100%;
+  background-color: lightgray;
 }
 footer {
-  bottom: 0%;
+  top: 0%;
   width: 100%;
   height: 10%;
+  background-color: var(--color6);
 }
