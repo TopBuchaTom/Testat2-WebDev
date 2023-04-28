@@ -1,0 +1,27 @@
+:root{
+  --color1: black;
+  --color2: #232933;
+  --color3: #2E3744;
+  --color4: white;
+  --color5: gray;
+  --color6: rgb(23, 108, 245);
+}
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+header {
+  position: fixed;
+  height: 25%;
+  width: 100%;
+}
+nav {
+  position: fixed;
+  top: 25%;
+  height: 85%;
+  width: 30%;
+}
+main {
+  
+}
