@@ -15,7 +15,9 @@
 
     </nav>
     <main title="Vorschau/Preview">
-
+      <?php
+      readfile('grußkarte.php')
+      ?>
     </main>
     <aside title="?????">
 
