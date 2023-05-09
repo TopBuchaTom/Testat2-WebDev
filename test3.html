@@ -3,14 +3,44 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="author" content="S.Dorn">
-        <meta name="description" content="Übung 2">
-        <title>Aufgabe 2</title>
+        <meta name="author" content="Clemens Ottmair, Sebastian Dorn & Thomas Zacher">
+        <meta name="description" content="Testat 2 - Grußkarteneditor">
+        <title>Testat 2 - Grußkarteneditor</title>
 
         <style>
+            body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            main {
+                position: fixed;
+                top: 16%;
+                left: 22%;
+                height: 85%;
+                width: 85%;
+            }
+
+            nav {
+                position: fixed;
+                top: 16%;
+                left: 0%;
+                height: 85%;
+                width: 15%;
+            }
+            aside {
+                position: fixed;
+                top: 15%;
+                left: 85%;
+                height: 85%;
+                width: 15%;
+            }
             svg {
-                position: absolute;
-                border: 2px solid;
+                position: fixed;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid dotted red;
                 /*background-color: lightgray;*/
                 display: block;
                 height: 50%;
@@ -19,30 +49,24 @@
             }
 
             image {
-                height: 100px;
-                
-                
+                height: 100px;   
             }
 
             .leiste1 {
                 overflow-x: scroll;
                 height: 100px;
                 width: 100%;
-
             }
 
             .pict {
                 height: 80px;
                 margin-left: 10px;
-                
                 direction: rtl;
-                
             }
 
             .text {
                 height: 80px;
                 margin-left: 10px;
-                
                 direction: rtl;
             }
 
@@ -52,7 +76,6 @@
                margin-left: 10px;
                 height: 100%;
                 width: 80%;
-                
                 /*
                 position: absolute;
                 top: 15%;
@@ -65,33 +88,6 @@
             .back {
                 width: 120px;
                 margin-top: 10px;
-                
-                
-            }
-
-            aside {
-                position: absolute;
-                top: 15%;
-                left: 85%;
-                height: 85%;
-                width: 15%;
-            }
-
-            main {
-
-                position: absolute;
-                top: 16%;
-                left: 22%;
-                height: 85%;
-                width: 85%;
-            }
-
-            nav {
-                position: absolute;
-                top: 16%;
-                left: 0%;
-                height: 85%;
-                width: 15%;
             }
 
             .tf {
@@ -114,9 +110,6 @@
                 left: 4%;
                 width: 120%;
             }
-
-
-
         </style>
     </head>
 
@@ -124,7 +117,6 @@
         <header>
             <div class="leiste1">
                 <img src="images/roller.png" id="roller" class="pict">
-                
                 <img src="images/bicycle.png" id="bicycle" class="pict">
                 <img src="images/flugzeug.png" id="flugzeug" class="pict">
                 <img src="images/tee.png" id="tee" class="pict">
@@ -132,8 +124,6 @@
                 <img src="images/text.png" id="atext" class="text">
             </div>
         </header>
-       
-
         <main>
             <svg id="svg">
                 <!--<circle r="5" cx="100" cy="400"></circle>  position: absolute;
@@ -158,7 +148,6 @@
                     <img src="images/back7.jpg" class="back" draggable="false">
                     <img src="images/back8.jpg" class="back" draggable="false">
                 </div>
-
             </aside>
             
             <nav>
@@ -168,7 +157,6 @@
                 <select name="font">
                     <option value="arial">arial</option>
                     <option value=""></option>
-
                 </select>
             </nav>
 
@@ -430,8 +418,7 @@
                 target=undefined
                 first=true
             })
-
-
+            
             /*
             let pic =document.querySelectorAll('image')
             let drag =false
@@ -478,9 +465,6 @@
                 })
             });
             */
-
         </script>
-
     </body>
-
 </html>

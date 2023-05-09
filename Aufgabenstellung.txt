@@ -8,3 +8,6 @@ Grußkarten-Editor erstellen
 
 Davor immer Synchronisierun & wenn fertig dann auf commit
 Bei merge-Conflicts nicht einfach auf akzeptieren, sondern schauen was richtig ist/uns fragen
+
+
+//für Icons, Schriftarten: https://fonts.google.com/icons
