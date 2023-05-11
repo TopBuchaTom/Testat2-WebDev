@@ -10,6 +10,8 @@
   <body title="Gru&szlig;karten-Editor">
     <header title="Werkzeuge/Tools">
 
+      <input type="color" value={color} onChange={setColor}/>
+
     </header>
     <nav title="Bilder">
 
