@@ -1,0 +1,470 @@
+<!Doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Clemens Ottmair, Sebastian Dorn & Thomas Zacher">
+        <meta name="description" content="Testat 2 - Grußkarteneditor">
+        <title>Testat 2 - Grußkarteneditor</title>
+
+        <style>
+            body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            main {
+                position: fixed;
+                top: 16%;
+                left: 22%;
+                height: 85%;
+                width: 85%;
+            }
+
+            nav {
+                position: fixed;
+                top: 16%;
+                left: 0%;
+                height: 85%;
+                width: 15%;
+            }
+            aside {
+                position: fixed;
+                top: 15%;
+                left: 85%;
+                height: 85%;
+                width: 15%;
+            }
+            svg {
+                position: fixed;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid dotted red;
+                /*background-color: lightgray;*/
+                display: block;
+                height: 50%;
+                width: 50%;
+               /* background-image: url("images/back1.jpg");*/
+            }
+
+            image {
+                height: 100px;   
+            }
+
+            .leiste1 {
+                overflow-x: scroll;
+                height: 100px;
+                width: 100%;
+            }
+
+            .pict {
+                height: 80px;
+                margin-left: 10px;
+                direction: rtl;
+            }
+
+            .text {
+                height: 80px;
+                margin-left: 10px;
+                direction: rtl;
+            }
+
+            .leiste2{
+                overflow-y: scroll;
+                direction: rtl;
+               margin-left: 10px;
+                height: 100%;
+                width: 80%;
+                /*
+                position: absolute;
+                top: 15%;
+                left: 80%;
+                height: 90%;
+                min-width: 100px;
+                */
+            }
+
+            .back {
+                width: 120px;
+                margin-top: 10px;
+            }
+
+            .tf {
+                position: relative;
+                top: 10%;
+                left: 4%;
+                width: 110%;
+            }
+
+            label {
+                position: relative;
+                top: 1%;
+                left: 4%;
+                font-size: 24pt;
+            }
+
+            .slider {
+                position: relative;
+                top: 5%;
+                left: 4%;
+                width: 120%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="leiste1">
+                <img src="images/roller.png" id="roller" class="pict">
+                <img src="images/bicycle.png" id="bicycle" class="pict">
+                <img src="images/flugzeug.png" id="flugzeug" class="pict">
+                <img src="images/tee.png" id="tee" class="pict">
+                <img src="images/saxophon.png" id="saxophon" class="pict">
+                <img src="images/text.png" id="atext" class="text">
+            </div>
+        </header>
+        <main>
+            <svg id="svg">
+                <!--<circle r="5" cx="100" cy="400"></circle>  position: absolute;
+                top: 15%;
+                left: 80%;
+                height: 85%;
+                width: 15%;
+             <image id="bier" href="images/bier.png"></image>
+            -->  
+                <!--<text x ="50" y ="50" font-size="48px" id="text">test</text> -->
+            </svg>
+        </main>
+
+            <aside>
+                <div class="leiste2">
+                    <img src="images/back1.jpg" class="back" draggable="false">
+                    <img src="images/back2.jpg" class="back" draggable="false">
+                    <img src="images/back3.jpg" class="back" draggable="false">
+                    <img src="images/back4.jpg" class="back" draggable="false">
+                    <img src="images/back5.jpg" class="back" draggable="false">
+                    <img src="images/back6.jpg" class="back" draggable="false">
+                    <img src="images/back7.jpg" class="back" draggable="false">
+                    <img src="images/back8.jpg" class="back" draggable="false">
+                </div>
+            </aside>
+            
+            <nav>
+                <input type="text" id="te" class="tf" disabled="disabled">
+                <label for="te">Text:</label>
+                <input type="range" min="12" max="180" step="2.0" class="slider" id="size" value="180" disabled="disabled">
+                <select name="font">
+                    <option value="arial">arial</option>
+                    <option value=""></option>
+                </select>
+            </nav>
+
+        <script>
+            let main=document.querySelector('main')
+            let svg =document.getElementById('svg')
+            //let pic=document.getElementById('bier')
+            //let pic2=document.querySelector('image')
+           // let img=document.querySelectorAll('img')
+           let img=document.querySelectorAll(".pict")
+           let back=document.querySelectorAll(".back")
+            let f=document.querySelector('figure')
+            let target=undefined
+            let target2=undefined
+            let xp=0
+            let yp=0
+            let id=undefined
+            let first=true
+            //let text=document.getElementById('text')
+            let atext=document.getElementById('atext')
+
+            let tf=document.getElementById("te")
+
+            let ssize=document.getElementById("size")
+           // let drag=false
+
+           ssize.oninput =fun3;
+
+           function fun3 (event) {
+                //console.log(event.target.value)
+                let fs =event.target.value
+                if (target2!=undefined) {
+                    target2.setAttribute('font-size', fs+'px')
+                }
+           }
+
+           atext.onclick=fun2;
+
+           function fun2(event) {
+            let eingt = prompt("enter Text");
+            let textt=document.createElementNS('http://www.w3.org/2000/svg' ,'text')
+            textt.textContent=eingt
+            textt.setAttribute('font-size' ,'48px')
+        
+            textt.setAttribute('x','30')
+            textt.setAttribute('y', '50')
+            svg.appendChild(textt)
+
+            textt.addEventListener('mousedown', event => {
+                //console.log(event)
+                target=event.target
+                
+                
+            })
+            textt.addEventListener("dblclick", event=> {
+                //event.preventDefault
+                console.log(event)
+                //let eingt = prompt("enter Text");
+                //event.target.textContent=eingt
+                let fs=event.target.getAttribute('font-size')
+                tf.disabled=false
+                ssize.disabled=false
+                ssize.setAttribute('value', fs)
+                tf.value=event.target.textContent
+                target2=event.target
+
+            })
+           }
+
+           tf.addEventListener('change', event => {
+                console.log(event)
+                
+           })
+
+           tf.addEventListener('keyup', event => {
+                console.log(event)
+                if (target2!=undefined) {
+                    target2.textContent=tf.value
+                }
+           })
+
+           /*
+            text.addEventListener('mousedown', event => {
+                //console.log(event)
+                target=event.target
+                
+                
+            })
+
+            text.addEventListener("dblclick", event=> {
+                //event.preventDefault
+                console.log(event)
+                let eingt = prompt("enter Text");
+                text.textContent=eingt
+                
+
+            })
+
+            */
+
+
+            img.forEach(item => {
+                item.addEventListener('mousedown', event => {
+                    //console.log(item.id)
+                    id=item.id
+                })
+                item.addEventListener('mouseup', event => {
+                    id =undefined
+                    //console.log(event)
+                })
+
+            });
+
+            back.forEach(item => {
+                item.onclick=fun1;
+            })
+
+
+            function fun1 (event) {
+               // console.log(event.target.src)
+                let url=event.target.src
+                let mw=main.clientWidth
+                let mh=main.clientHeight
+                let picw=event.target.clientWidth
+                let pich=event.target.clientHeight
+                let count=1
+                let svgw=0
+                let svgh=0
+                //console.log(event.target.clientWidth)
+               // console.log(event.target.clientHeight)
+               // console.log(event.target.style.height)
+               // console.log(url)
+                svg.style.backgroundImage="url("+url+")";
+                while (true) {
+                    if (picw*count<mw && pich*count<mh) {
+                        svgw=picw*count
+                        svgh=pich*count
+                    }
+                    else {
+                        break;
+                    }
+                    count++;
+                }
+                //console.log(mw +" " +mh)
+                //console.log(svgw+ " " +svgh)
+                svg.style.width=svgw+"px"
+                svg.style.height=svgh+"px"
+                //console.log(event.target)
+                //console.log(svg.clientWidth)
+                svg.style.backgroundSize="cover";
+                //svg.style.width='80%';
+                //svg.style.height='80%';
+                //svg.style.width='160px';
+                //svg.style.height='90px';
+                
+            }
+            /*
+            back.onclick= fun1;
+            function fun1 (event) {
+                console.log(event)
+            }*/
+            /*
+            f.addEventListener('dragstart', event=> {
+                console.log(event)
+            })
+            /*
+            pic.forEach(item => {
+                item.addEventListener('mousedown', event=> {
+                    target=event.target
+                })
+                item.addEventListener('mouseup', event=> {
+                    target=undefined
+                })
+            });
+            */
+            /*
+            img.forEach(item => {
+                item.setAttribute('draggable', true)
+                //console.log("test")
+                item.addEventListener('dragestart', event => {
+                    console.log(event)
+                    event.dataTransfer.setData('application/img-id', item.id)
+                    
+                })
+            });*/
+            /*
+           pic.addEventListener('mousedown', event=> {
+                    target=event.target
+                   // drag=true
+                   
+            })
+            pic.addEventListener('mouseup', event=> {
+                    target=undefined
+                   // drag=false
+            })
+            */
+            svg.addEventListener('dragover',event => {event.preventDefault()})
+            svg.addEventListener('drop', event => {
+               // console.log(event)
+                if (id !=undefined) {
+                    //console.log("test1")
+                let image=document.createElementNS('http://www.w3.org/2000/svg' ,'image')
+                let src=document.getElementById(id).getAttribute("src")
+                image.setAttribute('href', src)
+                //image.setAttribute('href', 'images/'+id+'.png' )
+               image.setAttribute('height', '100px')
+               svg.append(image)
+
+               image.addEventListener('mousedown', event => {
+                    target=event.target
+               })
+
+               image.addEventListener('mouseup', event=> {
+                    target=undefined
+            })
+                id =undefined
+             }
+            
+              // let id=event.dataTransfer.getData('application/img-id')
+               //.getAttribute("src"));
+                /*
+               const image =document.createElement("image");
+               //image.href="images/tee.png"
+
+               image.setAttribute('href', 'images/tee.png' )
+               image.setAttribute('height', '100px')
+                svg.append(circle)
+                */
+                /*
+                let id=event.dataTransfer.getData('application/img-id')
+                if (id) {
+                    svg.appendChild(document.getElementById(id))
+                }*/
+            })
+            svg.addEventListener('mousemove', event => {
+                //console.log(target.getBoundingClientRect())
+                if (target != undefined) {
+                    if (first) {
+                        let x=target.getBoundingClientRect()["x"];
+                        let y=target.getBoundingClientRect()["y"];
+                        xp =event.x-x
+                        yp=event.y-y
+                       // console.log(xp)
+                        first=false
+                    }
+                        
+                    
+                    //console.log(event.offsetX +" 1")
+                   // console.log(x)
+                    //console.log(event.x)
+                    
+                    target.setAttribute('x', event.offsetX-xp)
+                    target.setAttribute('y', event.offsetY-yp)
+
+                }
+            })
+
+            svg.addEventListener('mouseup',event => {
+                target=undefined
+                first=true
+            })
+            
+            /*
+            let pic =document.querySelectorAll('image')
+            let drag =false
+            pic.forEach(item => {
+                item.addEventListener('mousedown', event => {
+                   // console.log(event)
+                   drag=true
+                })
+
+                item.addEventListener('mousemove', event => {
+                    if(drag) {
+                        item.setAttribute('x', event.offsetX)
+                        item.setAttribute('y', event.offsetY)
+                       // item.setAttribute('cx', event.offsetX)
+                        //item.setAttribute('cy', event.offsetY)
+
+                    }   
+                })
+                item.addEventListener('mouseup', event=> {
+                    drag=false
+                })
+            })
+            */
+            /*
+            let ci =document.querySelectorAll('circle')
+            let drag=false
+
+            ci.forEach(item => {
+                item.addEventListener('mousedown', event => {
+                    console.log(event)
+                    drag =true
+                })
+                item.addEventListener('mousemove', event => {
+                   // console.log('${event.x} ${event.y}')
+                    if(drag) {
+                        item.setAttribute('cx', event.offsetX)
+                        item.setAttribute('cy', event.offsetY)
+
+                    }
+                })
+
+                item.addEventListener('mouseup', event=> {
+                    drag=false
+                })
+            });
+            */
+        </script>
+    </body>
+</html>

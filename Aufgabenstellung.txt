@@ -4,5 +4,10 @@ Grußkarten-Editor erstellen
 - Bild hineinzihen
 - mit Text
 - Grußkarten soll man verschicken können (Email)
+-	Grußkarte in Datenbank (=Server) speichern (Grußkarte muss wiederabrufbar sein)
 
-test test
+Davor immer Synchronisierun & wenn fertig dann auf commit
+Bei merge-Conflicts nicht einfach auf akzeptieren, sondern schauen was richtig ist/uns fragen
+
+
+//für Icons, Schriftarten: https://fonts.google.com/icons
