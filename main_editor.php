@@ -6,7 +6,7 @@
     <meta name="author" content="Clemens Ottmair, Sebastian Dorn & Thomas Zacher">
     <meta name="description" content="Testat 2 - Grußkarteneditor">
     <title>Testat 2 - Grußkarteneditor</title>
-    <link rel="stylesheet" href="general_settings.css">
+    <link rel="stylesheet" href="General_Settings.css">
   </head>
 
   <body>
@@ -72,6 +72,6 @@
       </select>
       <button onclick="load2()" class="load">Hochladen</button>
     </nav>
-    <script type="text/javascript" src="Logik.js"></script>
+    <script type="text/javascript" src="Logic.js"></script>
   </body>
 </html>
