@@ -1,3 +1,118 @@
+header {
+  top: 0%;
+  left: 0%;
+  height: 14%;
+  display: inline;
+}
+
+nav {
+  position: absolute;
+  top: 16%;
+  left: 0%;
+  height: 85%;
+  width: 15%;
+}
+
+main {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  height: 86%;
+  width: 65%;
+  /*  margin: 10px;*/
+}
+
+aside {
+  position: absolute;
+  top: 15%;
+  left: 85%;
+  height: 85%;
+  width: 15%;
+}
+
+svg {
+  position: absolute;
+  border: 2px solid;
+  display: block;
+}
+
+image {
+  /*  height: 100px;*/
+  height: 100px;
+}
+
+
+.leiste1 {
+  overflow-x: scroll;
+  /*height: 100px;*/
+  height: 100%;
+  width: 100%;
+}
+
+.pict {
+  height: 80px;
+  margin-left: 10px;
+
+  direction: rtl;
+}
+
+.text {
+  height: 80px;
+  margin-left: 10px;
+
+  direction: rtl;
+}
+
+.leiste2 {
+  overflow-y: scroll;
+  direction: rtl;
+  margin-left: 10px;
+  height: 100%;
+  width: 80%;
+}
+
+.back {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.tf {
+  position: relative;
+  top: 10%;
+  left: 4%;
+  width: 110%;
+}
+
+label {
+  position: relative;
+  top: 1%;
+  left: 4%;
+  font-size: 24pt;
+}
+
+.slider {
+  position: relative;
+  top: 5%;
+  left: 4%;
+  width: 120%;
+}
+
+.schrift {
+  position: relative;
+  top: 6%;
+  left: 4%;
+  width: 42%;
+  height: 5%;
+}
+
+.load {
+  position: relative;
+  top: 12%;
+  left: -40%;
+}
+
+
+/*
 :root{
   --color1: black;
   --color2: #2E3744;
