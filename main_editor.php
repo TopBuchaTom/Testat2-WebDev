@@ -14,7 +14,6 @@
       <div class="leiste1">
         <!--hier mach ich PHP draus-->
         <img src="images/roller.png" id="roller" class="pict" />
-
         <img src="images/bicycle.png" id="bicycle" class="pict" />
         <img src="images/flugzeug.png" id="flugzeug" class="pict" />
         <img src="images/tee.png" id="tee" class="pict" />
@@ -73,6 +72,7 @@
       </select>
       <button onclick="load2()" class="load">Hochladen</button>
     </nav>
+
     <script type="text/javascript" src="Logic.js"></script>
   </body>
 </html>

@@ -84,6 +84,7 @@ img.forEach((item) => {
     //console.log(event)
   });
 });
+
 svg.addEventListener("dragover", (event) => {
   if (background) {
     event.preventDefault();
@@ -93,7 +94,6 @@ svg.addEventListener("dragover", (event) => {
 svg.addEventListener("drop", (event) => {
   //console.log(event)
   //console.log(event.offsetX+" "+ event.offsetY)
-
   if (imgid != undefined) {
     if (imgid != "atext") {
       let image = document.createElementNS(
