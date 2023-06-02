@@ -12,6 +12,7 @@
   <body>
     <header>
       <div class="leiste1">
+        <!--hier mach ich PHP draus-->
         <img src="images/roller.png" id="roller" class="pict" />
 
         <img src="images/bicycle.png" id="bicycle" class="pict" />
