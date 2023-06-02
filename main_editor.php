@@ -4,13 +4,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Clemens Ottmair, Sebastian Dorn & Thomas Zacher">
-    <meta name="description" content="Testat 2 - Grußkarteneditor">
-    <title>Testat 2 - Grußkarteneditor</title>
+    <meta name="description" content="Testat 2 - Gru&szlig;karteneditor">
+    <title>Testat 2 - Gru&szlig;karteneditor</title>
     <link rel="stylesheet" href="General_Settings.css">
   </head>
 
   <body>
-    <header>
+    <header title="Werkzeuge/Tools">
       <div class="leiste1">
         <!--hier mach ich PHP draus-->
         <img src="images/roller.png" id="roller" class="pict" />
@@ -23,7 +23,7 @@
       </div>
     </header>
 
-    <main>
+    <main title="Vorschau/Preview">
       <svg id="svg"></svg>
     </main>
 
@@ -70,7 +70,9 @@
         <option value="Impact">Impact</option>
         <option value="times new roman">times new roman</option>
       </select>
-      <button onclick="load2()" class="load">Hochladen</button>
+      <button onclick="load2()" class="load">Speichern in DB</button>
+      <button onclick="load2()" class="load">Senden</button>
+      <button onclick="load2()" class="load">&Ouml;ffnen</button>
     </nav>
 
     <script type="text/javascript" src="Logic.js"></script>
