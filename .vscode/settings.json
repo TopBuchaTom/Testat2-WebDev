@@ -1,0 +1,31 @@
+{
+  "files.autoSave": "afterDelay", //Preview aktualliesiert sich automatisch nach 1s
+  "files.autoSaveDelay": 1000,
+  "editor.formatOnSave": true,    //auto. Speichern
+
+  "editor.tabSize": 2,            //2 Tabs Abstand (statt 4)
+
+  "workbench.colorTheme": "Default Dark Modern",
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  //"git.postCommitCommand": "sync",
+  //"git.autofetchPeriod": 1,   //automatisch Repository herunterladen
+
+  "liveServer.settings.CustomBrowser": "[chrome],[edge]",
+
+  "phpserver.browser": "",      //leer lassen (Chrome als Standardbrowser festlegen), sonst funktioniert PHP Server: Open file in Browser nicht
+  "liveServer.settings.NoBrowser": true,
+  "phpserver.phpConfigPath": "C:/xampp/php/php.ini",
+  "phpserver.phpPath": "C:/xampp/php/php.exe",
+  "php.validate.executablePath": "C:/xampp/php/php.exe",
+
+  /*
+  "workbench.editorAssociations": {
+    "*.docx": "cweijan.officeViewer"
+  },
+  
+  */
+}
+
+//"C:\Users\tzach\AppData\Roaming\Code\User\settings.json" : Haupteinstellungen
